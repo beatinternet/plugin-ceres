@@ -10761,12 +10761,12 @@ html {
 
 body {
 
-	background-color: $gray-lightest;
+	background-color: #ffffff;
 
 	> #vue-app,
 	> #vue-error {
 
-		background-color: $gray-lightest;
+		background-color: #ffffff;
 		
 		&>.wrapper-top, &>.wrapper-left, &>.wrapper-right, &>.wrapper-bottom {
 			position 	: absolute;
