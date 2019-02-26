@@ -98,11 +98,7 @@
             <slot name="AfterAddToBasket"></slot>
         </div>
         
-        {% else %}
-<b>Preise nur nach Login.</b> Sollten Sie noch kein Kunden bei uns sein, <br>
-melden Sie sich bitte bei uns an und Sie werden in den nächsten 24 Stunden für den Webshop freigeschaltet.
 
-{% endif %}
 
     </div>
 
@@ -111,6 +107,12 @@ melden Sie sich bitte bei uns an und Sie werden in den nächsten 24 Stunden für
             <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
         </div>
     {% endif %}
+    
+            {% else %}
+<b>Preise nur nach Login.</b> Sollten Sie noch kein Kunden bei uns sein, <br>
+melden Sie sich bitte bei uns an und Sie werden in den nächsten 24 Stunden für den Webshop freigeschaltet.
+
+{% endif %}
     <!-- ./ITEM DETAIL -->
 
     <slot name="AdditionalContentAfterAddToBasket"></slot>
