@@ -40,6 +40,8 @@
 
     <graduated-prices template="#vue-graduated-prices"></graduated-prices>
 
+{% if frontend.Account.getIsAccountLoggedIn %}
+
     {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
         <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.unitPrice.value > 0 && currentVariation.prices.rrp.unitPrice.value > currentVariation.prices.default.unitPrice.value">
             <del class="text-muted small">
@@ -98,6 +100,13 @@
         <div class="w-100">
             <slot name="AfterAddToBasket"></slot>
         </div>
+        
+        {% else %}
+<b>Preise nur nach Login.</b> Sollten Sie noch kein Kunden bei uns sein, <br>
+melden Sie sich bitte bei uns an und Sie werden in den nächsten 24 Stunden für den Webshop freigeschaltet.
+
+{% endif %}
+
     </div>
 
     {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
