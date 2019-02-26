@@ -1,3 +1,5 @@
+
+
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {% set numberOfCols = config('Ceres.footer.number_of_cols') %}
@@ -11,49 +13,161 @@
 
 <div class="footer">
 
+
+ 
     <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
         <i class="fa fa-chevron-up"></i>
     </div>
 
-    <div class="to-top d-md-none" v-scroll-to-top>
+    <div class="to-top hidden-md-up" v-scroll-to-top>
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
     </div>
 
     {% if numberOfFeatures > 0 %}
-        <div class="footer-features py-3 container-max">
+        <div class="footer-features p-y-1 container-max" style="background-color:white;">
             <div class="row">
-                {% for i in 1..numberOfFeatures %}
-                    <div class="col-12 col-sm-4 text-center">
-                        <i class="fa fa-check text-success" aria-hidden="true"></i>
-                        {{ trans('Ceres::Template.footerStoreFeature' ~ i) }}
+               
+                    <div class="col-xs-12 col-sm-4 text-xs-center" style="padding-top:12px;padding-bottom:20px;">
+                       <!-- {{ trans('Ceres::Template.footerStoreFeature' ~ i) }} --><div style="text-align: left;">
+                      <img src="https://cdn02.plentymarkets.com/zt06z6ynqgmj/frontend/layout/mb-muller-logo-148917414710.jpg" width="100px"><br>
+
+<br><br>
+Wernher-von-Braun-Straße 5-7<br>
+69214 Eppelheim<br>
+Deutschland ( Germany )<br>
+Tel.: +49 (0) 6221 33937-0<br>
+Fax: +49 (0) 6221 33937-59<br>
+mail: info@mb-mueller.com<br>
+</div>
                     </div>
-                {% endfor %}
+                     <div class="col-xs-12 col-sm-3 text-xs-center" style="padding-top:12px;padding-bottom:20px;">
+                      <div style="text-align: left;line-height: 1.8;"><h3><b>INFORMATION</b></h3> <br><br>
+                       <!-- {{ trans('Ceres::Template.footerStoreFeature' ~ i) }} -->
+                         {% autoescape false %}
+                    <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
+                    {% if config("Ceres.footer.cancellation_use_pdf") == "true" %}
+                        <a href="{{ config('Ceres.footer.cancellation_pdf_path') }}" target="_blank">{{ trans("Ceres::Template.footerCancellationForm", {"hyphen": "&shy;"}) }}</a>
+                    {% else %}
+                       <br><a href="{{ urls.cancellationForm }}">{{ trans("Ceres::Template.footerCancellationForm", {"hyphen": "&shy;"}) }}</a>
+                    {% endif %}
+                   <br><a href="{{ urls.legalDisclosure }}">{{ trans("Ceres::Template.footerLegalDisclosure") }}</a>
+                    <br><a href="{{ urls.privacyPolicy }}">{{ trans("Ceres::Template.footerPrivacyPolicy", {"hyphen": "&shy;"}) }}</a>
+                    <br><a href="{{ urls.gtc }}">{{ trans("Ceres::Template.footerGtc") }}</a>
+                    {% if config("Ceres.contact.shop_mail") | length > 0 and config("Ceres.contact.shop_mail") != "your@email.com" %}
+                        <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
+                    {% endif %}
+                {% endautoescape %}</div>
+                    </div>
+                     <div class="col-xs-12 col-sm-5 text-xs-center" style="padding-top:12px;padding-bottom:20px;">
+                      <div style="text-align: left;">
+                       <!-- {{ trans('Ceres::Template.footerStoreFeature' ~ i) }} -->
+                     <h3><b>NEWSLETTER</B></h3> <br><br>
+                     
+                     <!-- Begin Mailchimp Signup Form -->
+
+<div id="mc_embed_signup">
+<form action="https://mb-mueller.us20.list-manage.com/subscribe/post?u=d0b37fc68d080d595c27fda80&amp;id=1d23dfe188" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+<div class="indicates-required"><span class="asterisk"></span></div>
+<div class="mc-field-group">
+	<input type="email" value="    Ihre E-Mail Adresse" name="EMAIL" class="required email" id="mce-EMAIL" 
+	style="border: 1px solid black;border-radius: 0px;background-color:#f6f6f6;color:#b4b4b4;width:250px;height:35px;margin:3px;
+	font-weight:bold;">
+</div><br>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d0b37fc68d080d595c27fda80_1d23dfe188" tabindex="-1" value=""></div>
+    <div class="clear">
+    
+    
+    <input type="submit" value="eintragen" name="subscribe" id="mc-embedded-subscribe" class="button" 
+    style="border: 1px solid black;border-radius: 5px;background-color:white;color:lightgrey;width:280px;position: absolute; left: -9999px">
+    
+    </div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+
+		     
+		     
+		     
+		     
+		     
+		     
+		     <br /> 
+</form>
+
+
+<div style="padding:10px;float:left;width:25%;"><img src="http://www.beatinternet.de/mueller/img/facebook_grau.png"></div>
+<div style="padding:10px;float:left;width:25%;"><img src="http://www.beatinternet.de/mueller/img/twitter_grau.png"></div>
+<div style="padding:10px;float:left;width:25%;"><img src="http://www.beatinternet.de/mueller/img/pinterest_grau.png"></div>
+<div style="padding:10px;float:left;width:25%;"><img src="http://www.beatinternet.de/mueller/img/google_grau.png"></div>
+</div>
+                    </div>
+               
             </div>
         </div>
+      
+ 
+           <div class="footer-features p-y-1 container-max" style="background-color:white;">
+	   <div style="height:2px;background-color:#f6f6f6;"></div>
+            <div class="row">
+               
+                    <div class="col-xs-12 col-sm-6 text-xs-center" style="padding-top:10px;">
+                       <!-- {{ trans('Ceres::Template.footerStoreFeature' ~ i) }} -->
+                       <div style="text-align: left;"><b>Copyright &copy; 2019 MBMüller</b></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-xs-center" style="padding-top:10px;">
+                       <!-- {{ trans('Ceres::Template.footerStoreFeature' ~ i) }} -->
+                       <div style="align-items:right;">
+		       
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/paypal.png" width="50%" >
+		       </div>
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/visa.png" width="50%" >
+		       </div>
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/master.png" width="50%">
+		       </div>
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/am.png" width="50%">
+		       </div>
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/vorkasse.png" width="50%">
+		       </div>
+		       <div style="padding:5px;float:left;width:16.6666%;"><img src="http://www.beatinternet.de/mueller/img/rechnung.png" width="50%">
+		       </div>
+		       </div>
+                   </div>
+            </div>
+        </div>     
+        
+        
     {% endif %}
 
 
     <div class="container-max footer-content">
-        <div class="row">
-            <div class="col-12">
-                <div class="footer-services mt-4">
+        <div class="row hidden">
+            <div class="col-xs-12">
+                <div class="footer-services m-t-2">
                     {% set paymentMethodContent = LayoutContainer.show("Ceres::Homepage.PaymentMethods") %}
                     {% if paymentMethodContent|trim is not empty %}
-                        <div class="services-payment mb-3">
+                        <div class="services-payment m-b-1">
                             <strong class="services-title">{{ trans("Ceres::Template.footerPaymentMethods") }}</strong>
                             {{ paymentMethodContent }}
                         </div>
                     {% endif %}
                     {% set shippingContent = LayoutContainer.show("Ceres::Homepage.Shipping") %}
                     {% if shippingContent|trim is not empty %}
-                        <div class="services-shipping mb-3">
+                        <div class="services-shipping m-b-1">
                             <strong class="services-title">{{ trans("Ceres::Template.footerOrderShippedBy") }}</strong>
                             {{ shippingContent }}
                         </div>
                     {% endif %}
                     {% set certifiedContent = LayoutContainer.show("Ceres::Homepage.Certified") %}
                     {% if certifiedContent|trim is not empty %}
-                        <div class="services-certificate mb-3">
+                        <div class="services-certificate m-b-1">
                             <strong class="services-title">{{ trans("Ceres::Template.footerCertifiedBy") }}</strong>
                             {{ certifiedContent }}
                         </div>
@@ -62,11 +176,11 @@
             </div>
         </div>
         
-        <div class="row">
-            <hr class="my-4">
+        <div class="row hidden">
+            <hr class="m-y-2">
             {% for i in 1..numberOfCols %}
-                <div class="col-6 col-sm-3 col-lg-2">
-                    <nav class="footer-column mb-4">
+                <div class="col-xs-6 col-sm-3 col-lg-2">
+                    <nav class="footer-column m-b-2">
                         <h2 class="h5">{{ trans('Ceres::Template.footerColumnTitle' ~ i) }}</h2>
                         <ul class="list-unstyled">
 
@@ -89,27 +203,29 @@
                     </nav>
                 </div>
             {% endfor %}
-            <hr class="d-sm-none my-4">
-            <div class="col-6 col-sm-3">
+            <hr class="hidden-sm-up m-y-2 hidden">
+            <div class="col-xs-6 col-sm-3 hidden ">
                 <div class="footer-column">
                     {{ LayoutContainer.show("Ceres::Footer.RowOne") }}
                 </div>
             </div>
-            <div class="col-12 col-sm-3">
+            <div class="col-xs-12 col-sm-3 hidden">
                 <div class="footer-column row">
                     {% set rowTwo = LayoutContainer.show("Ceres::Footer.RowTwo") %}
                     
                     {{ rowTwo }}
 
-                    <div class="col-12{% if rowTwo|trim is not empty %} col-sm-6 col-lg-12{% endif %}">
+                    <div class="col-xs-12{% if rowTwo|trim is not empty %} col-sm-6 col-lg-12{% endif %}">
                         {{ LayoutContainer.show("Ceres::Footer.RowThree") }}
                     </div>
                 </div>
             </div>
-        </div>            
+        </div>       
+        
+   
 
-        {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
-        <div class="copyright text-center my-3">
+    <!--    {% set cat = services.category.get(config('Ceres.global.category.legal_disclosure')) %}
+        <div class="copyright text-xs-center m-y-1">
             <div class="static-link-list">
                 {% autoescape false %}
                     <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
@@ -126,12 +242,9 @@
                     {% endif %}
                 {% endautoescape %}
             </div>
-            <a rel="nofollow" href="https://www.plentymarkets.eu">
-                <img alt="Plentymarkets GmbH Logo" class="svg plenty-brand" src="{{ plugin_path('Ceres') }}/images/plentymarkets-logo.svg" rel="nofollow" crossorigin="anonymous">
-            </a>
-            <br>
-            <small>&copy; Copyright {{ "now" | date("Y") }} | {{ trans("Ceres::Template.footerAllRightsReserved") }}</small>
-        </div>
+        <br>
+            <small>&copy; Copyright MB Müller {{ "now" | date("Y") }} | {{ trans("Ceres::Template.footerAllRightsReserved") }}</small>
+        </div> -->
     </div>
 </div>
 {% else %}
@@ -141,14 +254,7 @@
                 {{ footerContainer | raw }}
             </div>
         </div>
-        <div class="{% if topButtonPosition == "right" %}back-to-top{% else %}back-to-top-center{% endif %} hidden-sm-down">
-            <i class="fa fa-chevron-up"></i>
-        </div>
-
-        <div class="row">
-            <div class="to-top hidden-md-up" v-scroll-to-top>
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-            </div>
-        </div>
     </div>
 {% endif %}
+
+
