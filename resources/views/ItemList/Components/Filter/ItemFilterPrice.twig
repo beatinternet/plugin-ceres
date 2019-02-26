@@ -1,4 +1,6 @@
 <script type="x/template" id="vue-item-filter-price">
+
+{% if frontend.Account.getIsAccountLoggedIn %}
 	<div class="row">
 		<div class="input-group col-lg-5 pb-3">
 			<div class="input-group-prepend">
@@ -30,5 +32,10 @@
 				<i v-waiting-animation="isLoading" class="fa fa-check" aria-hidden="true"></i>
 			</button>
 		</div>
-	</div>	
+	</div>
+	
+	{% else %}
+Preise erst nach Anmeldung
+{% endif %}
+
 </script>
