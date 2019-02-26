@@ -127,7 +127,7 @@ $teal:                      #20c997 !default;
 $cyan:                      #17a2b8 !default;
 
 // legacy
-$brand-primary:             $blue !default;
+$brand-primary:             $black !default;
 $brand-secondary:           $red !default;
 $brand-success:             $green !default;
 $brand-info:                $cyan !default;
@@ -14139,7 +14139,7 @@ body.menu-is-visible {
 
 		.breadcrumb { display : none!important; }
 		ul.mainmenu {
-			color : $menu-color-lg;
+			color : #e2e2e2;
 			text-align: right;
 			.open>ul { display : none!important; }
 			>li {
