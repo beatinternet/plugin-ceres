@@ -1,62 +1,91 @@
+
+
 {% set currentLang = services.sessionStorage.getLang() %}
+
 {% set homepageJson = getExternalContent("https://cdn02.plentymarkets.com/pmsbpnokwu6a/plugin/production/marketingresource/js/HomepageContent.json") %}
+
 {% set homepageData = homepageJson[currentLang] %}
 
-<div class="container-max mkt-homepage">
-    <div class="carousel slide" data-interval="5000" data-ride="carousel" id="carousel-example">
-        <div class="carousel-inner" id="carousel-content">
-            {% for picture in homepageData.pictures %}
-                <div class="carousel-item text-muted {% if loop.first %}active{% endif %}">
-                    <a href="{{ picture.pictureLink }}">
-                        <img class="img-fluid" src="{{ picture.pictureUrl }}" />
-                    </a>
-                    <div class="carousel-caption">
-                        <h2>{% autoescape false %}{{ picture.text }}{% endautoescape %}</h2>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <a class="left carousel-control carousel-control-prev" href="#carousel-example" data-slide="prev"><i
-                    class="icon-prev  fa fa-angle-left"></i></a>
-        <a class="right carousel-control carousel-control-next" href="#carousel-example" data-slide="next"><i
-                    class="icon-next fa fa-angle-right"></i></a>
+
+
+<div style="width:100%;padding-top:-88px;">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="http://www.beatinternet.de/mueller/content/startpage/banner.jpg" alt="1 slide">
     </div>
-
-    <div class="row">
-        <div class="col-lg-6">
-            <h1 id="welcome-text">{% autoescape false %}{{ homepageData.texts.welcome }}{% endautoescape %}</h1>
-        </div>
-        <div class="col-lg-6">
-            <p id="short-description">{% autoescape false %}{{ homepageData.texts.shortDescription }}{% endautoescape %}</p>
-        </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://www.beatinternet.de/mueller/content/startpage/banner2.jpg" alt="2 slide">
     </div>
-
-    <hr class="my-2">
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 id="recommend-text">{% autoescape false %}{{ homepageData.texts.recommendText }}{% endautoescape %}</h2>
-        </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://www.beatinternet.de/mueller/content/startpage/banner3.jpg" alt="3 slide">
     </div>
-
-    <hr class="my-2">
-
-    <div class="row">
-        <div class="row mt-xs-0_5">
-            <ul class="flex-container" id="recommended-plugins">
-                {% for plugin in homepageData.recommended | shuffle %}
-                    <li class="flex-item">
-                        <a rel="noopener noreferrer" target="_blank" href="{{ plugin.pluginLink }}">
-                            <img class="flex-image" src="{{ plugin.pluginIcon }}" />
-                            <div class="flex-align-bottom">
-                                <h1 class="flex-title">{% autoescape false %}{{ plugin.pluginTitle }}{% endautoescape %}</h1>
-                                <div class="flex-text">{% autoescape false %}{{ plugin.pluginText }}{% endautoescape %}</div>
-                            </div>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+  </div>
 </div>
+</div>
+<div class="container-max mkt-homepage" style="background-color:white;padding-top:50px;padding-bottom:50px;">
 
+<div style="padding-bottom:50px;">
+      <div class="col-xs-12 col-sm-4 text-xs-center" style="color:black;">
+<div style="text-align: left;">
+<div style="position:relative;left:20px;top:140px;"><h2><b>#forher</b></h2></div>
+<div style="position:relative;left:20px;top:142px;letter-spacing: 0.18em;"><h6>HOT TRENDS 2019</h6></div>
+<div style="position:relative;left:20px;top:175px;letter-spacing: 0.3em;border-bottom: 1px solid black;
+width:120px;height;30px;vertical-align:middle;text-align:center;"><h5><a href="https://www.mb-mueller.com/damen/bekleidung-grosshandel-lizenz">SHOP NOW</a></h5></div>
+
+
+<img src="http://www.beatinternet.de/mueller/content/startpage/cat2.jpg" width="100%" style="padding-top:20px;padding-bottom:60px;" >
+</div>
+                    </div>
+             <div class="col-xs-12 col-sm-4 text-xs-center" style="color:black;">
+<div style="text-align: left;">
+<div style="position:relative;left:20px;top:140px;"><h2><b>#accessories</b></h2></div>
+<div style="position:relative;left:20px;top:142px;letter-spacing: 0.18em;"><h6>NEW LOOK</h6></div>
+<div style="position:relative;left:20px;top:175px;letter-spacing: 0.3em;border-bottom: 1px solid black;
+width:120px;height;30px;vertical-align:middle;text-align:center;"><h5><a href="https://www.mb-mueller.com/accessoires">SHOP NOW</a></h5></div>
+<img src="http://www.beatinternet.de/mueller/content/startpage/cat1.jpg" width="100%" style="padding-top:20px;padding-bottom:60px;">
+
+</div>
+                    </div>
+                    
+                      
+<div class="col-xs-12 col-sm-4 text-xs-center" style="color:black;">
+<div style="text-align: left;">
+<div style="position:relative;left:20px;top:140px;"><h2><b>#realmen</b></h2></div>
+<div style="position:relative;left:20px;top:142px;letter-spacing: 0.18em;"><h6>BEST STYLE 2019</h6></div>
+<div style="position:relative;left:20px;top:175px;letter-spacing: 0.3em;border-bottom: 1px solid black;
+width:120px;height;30px;vertical-align:middle;text-align:center;"><h5><a href="https://www.mb-mueller.com/herren/bekleidung">SHOP NOW</a></h5></div>
+<img src="http://www.beatinternet.de/mueller/content/startpage/cat3.jpg" width="100%" style="padding-top:20px;padding-bottom:60px;">
+
+</div>
+                  
+                    
+                    </div></div><br>
+
+<div style="text-align: center;">
+<div style="color:black;">
+<h2><b>#TOP</b>PRODUCTS</h2></div>
+<div style="letter-spacing: 0.3em;">Entdecken Sie unsere aktuellen Aktionen</div>
+<br><br>
+
+      <div class="col-xs-12 col-sm-4 text-xs-center" style="">
+<div style="text-align: center;"> <a href="https://www.mb-mueller.com/damen/accessoires/taschen-gepaeck-grosshandel/steampunk-tasche-banned_9073_11419">
+<img src="https://cdn02.plentymarkets.com/zt06z6ynqgmj/item/images/9073/middle/16284.jpg" width="100%" style="padding-top:30px;border: 1px solid #E6E6E6;" ></a>
+</div>
+                    </div>
+             <div class="col-xs-12 col-sm-4 text-xs-center" style="">
+<div style="text-align: center;">
+<a href="https://www.mb-mueller.com/damen/accessoires/taschen-gepaeck-grosshandel/steampunk-tasche-banned_9073_11419">
+<img src="https://cdn02.plentymarkets.com/zt06z6ynqgmj/item/images/7811/middle/12904.jpg" width="100%" style="padding-top:30px;border: 1px solid #E6E6E6;"></a>
+</div>
+                    </div>
+                    
+                      
+<div class="col-xs-12 col-sm-4 text-xs-center" style="">
+<div style="text-align: center;">
+<a href="https://www.mb-mueller.com/damen/accessoires/taschen-gepaeck-grosshandel/gestreifte-daybag_7813_10159">
+<img src="https://cdn02.plentymarkets.com/zt06z6ynqgmj/item/images/7813/middle/12534.jpg" width="100%" style="padding-top:30px;border: 1px solid #E6E6E6;"></a>
+</div>
+                    </div>
+
+  </div> </div>
