@@ -14181,7 +14181,7 @@ body.menu-is-visible {
 						.no-touch &:hover,
 						.touch &.hover {
 							background  	: $menu-big-menu-li-bg-hover;
-							color 			: $menu-big-menu-li-color;
+							color 			: #efefef;
 							text-decoration : none;
 						}
 
@@ -14198,7 +14198,7 @@ body.menu-is-visible {
 				.no-touch &:hover,
 				.touch &.hover {
 					background-color : $menu-li-bg-hover;
-					color 			 : $menu-li-color-hover;
+					color 			 : #efefef;
 					-webkit-transition 		 : all .1s ease;
 					transition 		 : all .1s ease;
 					>ul {
