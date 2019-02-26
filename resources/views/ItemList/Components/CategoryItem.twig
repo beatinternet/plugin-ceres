@@ -59,6 +59,8 @@
                         ${ itemData | itemName }<!--
                         --><span v-for="attribute in itemData.groupedAttributes">${ "Ceres::Template.itemGroupedAttribute" | translate(attribute) }</span>
                     </a>
+                    
+                    {% if frontend.Account.getIsAccountLoggedIn %}
                     <div class="thumb-meta">
                         <slot name="BeforePrices"></slot>
 
@@ -94,8 +96,14 @@
                         {{ trans("Ceres::Template.itemExclusive") }}
                         <a {% if shippingCat is not empty %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
                     </span>
-                </div>
+               
+               {% else %}
+Preise nur nach Login
+{% endif %}
+               </div>
             </slot>
+            
+            
             <!-- ./ITEM DETAILS  -->
         </div>
     </article>
