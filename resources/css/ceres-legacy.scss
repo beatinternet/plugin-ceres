@@ -14252,7 +14252,7 @@ body.menu-is-visible {
 				}
 
 				>ul.collapse {
-					background-color: lightgrey;
+					background-color: #f0f0f0;
 					-webkit-column-gap		: .5em;
 					        column-gap		: .5em;
 					-webkit-column-rule		: 1px solid #dcdbd7;
@@ -14274,7 +14274,7 @@ body.menu-is-visible {
 					}
 
 					>li ul.nav-dropdown-inner {
-						background-color	: $megamenu-bg;
+						background-color	: #f0f0f0;
 						padding-bottom		: 1em;
 
 						>li {
