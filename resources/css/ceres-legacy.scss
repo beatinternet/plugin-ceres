@@ -6205,8 +6205,8 @@ input[type="button"] {
   &.active .page-link {
     z-index: 1;
     color: $pagination-active-color;
-    background-color: $pagination-active-bg;
-    border-color: $pagination-active-border-color;
+    background-color: #000000;
+    border-color: #000000;
   }
 
   &.disabled .page-link {
