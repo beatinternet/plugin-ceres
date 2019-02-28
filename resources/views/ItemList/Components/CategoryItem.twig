@@ -17,7 +17,7 @@
 
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
-        <div class="thumb-inner">
+        <div class="thumb-inner" style="border: solid 1px #E2E2E1;">
 {% if frontend.Account.getIsAccountLoggedIn %}
             {{ AddToBasket.printVueComponent( "itemData", true ) }}
                {% else %}
