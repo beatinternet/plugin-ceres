@@ -16141,6 +16141,8 @@ html.ie .basket-preview-hover {
     overflow: hidden;
     background-color: #fff;
     margin-bottom: $grid-gutter-width/2;
+	  border: solid 1px lightgrey;
+
 
     .tag-list span{
         background-color: #4D4F4D;
@@ -16222,7 +16224,7 @@ html.ie .basket-preview-hover {
         -webkit-transition: all 200ms ease-in-out;
 
         transition: all 200ms ease-in-out;
-	    border: solid 1px lightgrey;
+	  
     }
 
     .thumb-inner{
