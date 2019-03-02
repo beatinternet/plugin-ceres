@@ -12652,7 +12652,7 @@ $border-width: 1px;
     position: relative;
     width: 100%;
     margin-bottom: $grid-gutter-width/2;
-    border: $border-width solid $border-color;
+    border-bottom: $border-width solid $border-color;
     border-radius: $border-radius;
     overflow: hidden;
 
