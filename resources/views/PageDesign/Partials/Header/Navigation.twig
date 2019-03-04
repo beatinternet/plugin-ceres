@@ -22,13 +22,23 @@
             </div>
 
             <div id="mainNavbarCollapsable">
-                <ul class="breadcrumb">
+               <div style="display:inline-block;">
+               
+               
+               <ul class="breadcrumb">
                     <li class="btnClose"></li>
                 </ul>
                 {% if showHeaderNavBar == "top" or showHeaderNavBar == "both" or not services.template.isCategory() %}
                     {# includeCached('Ceres::PageDesign.Partials.Header.NavigationList.twig') #}
                     {% include "Ceres::PageDesign.Partials.Header.NavigationList" %}
                 {% endif %}
+                
+                </div>
+                <div style="display:inline-block;">
+                
+                <img src="https://cdn02.plentymarkets.com/zt06z6ynqgmj/item/images/6200/middle/16274.jpg">
+                </div>
+                
             </div>
 
         </div>
